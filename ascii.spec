@@ -1,8 +1,8 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	2.7
-Release:	2
+Version:	3.1
+Release:	1
 License:	distributable
 Group:		Applications/Text
 Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
@@ -29,7 +29,7 @@ zestaw znaków ASCII.
 %setup -q
 
 %build
-%{__make} CFLAGS="%{rpmcflags}"
+%{__make} CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
