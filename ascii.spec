@@ -5,7 +5,7 @@ Version:	2.7
 Release:	1
 Copyright:	distributable
 Group:		Utilities/Text
-Group(pl):	Narzêdzia/Tekstowe
+Group(pl):	Narzêdzia/Tekst
 Source:		ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
