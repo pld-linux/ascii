@@ -1,12 +1,13 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	3.1
-Release:	2
+Version:	3.2
+Release:	1
 License:	distributable
 Group:		Applications/Text
-Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
-# Source0-md5:	ea3866df5aedb61413791610dab75193
+Source0:	http://www.catb.org/~esr/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	c87cec846efe6af3c5c88e7e8af24dd6
+URL:		http://www.catb.org/~esr/ascii/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,7 +31,8 @@ zestaw znaków ASCII.
 %setup -q
 
 %build
-%{__make} CC="%{__cc} %{rpmcflags}"
+%{__make} \
+	CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,5 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README ascii.cgi
 %attr(755,root,root) %{_bindir}/ascii
 %{_mandir}/man1/*
