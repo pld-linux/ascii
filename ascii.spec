@@ -1,10 +1,13 @@
-Name: ascii
-Version: 2.6
-Release: 1
-Source: locke.ccil.org:/pub/esr/ascii-2.6.tar.gz
-Copyright: distributable
-Group: Utilities/Text
-Summary: interactive ASCII name and synonym chart
+Summary:        Interactive ASCII name and synonym chart
+Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
+Name: 		ascii
+Version: 	2.6
+Release: 	2
+Copyright:      distributable
+Group:          Utilities/Text
+Group(pl):      Narzêdzia/Tekstowe
+Source: 	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 The ascii utility provides easy conversion between various byte representations
@@ -14,17 +17,33 @@ ISO/ECMA code point, slang name, and other representations.  Given any one on
 the command line, it will try to display all others.  Called with no arguments
 it displays a handy small ASCII chart.
 
+%description -l pl
+Program ascii umo¿liwia ³atw± konwersjê pomiêdzy tablic± znaków ASCII
+i ich ró¿nymi odpowiednikami w postaci heksadecymalnej, binarnej, oktalnej, 
+Teletype mnemonic, ISO/ECMA, nazw potocznych, etc. Jakikolwiek z nich 
+podany w linii poleceñ spowoduje wy¶wietlenie pozosta³ych odpowiedników.
+Wywo³any bez argumentów wy¶wietla porêczny zestaw znaków ASCII.
+
 %prep
-%setup
+%setup -q
 
 %build
-make
+make CFLAGS="$RPM_OPT_FLAGS"
 
 %install
-rm -f /usr/bin/ascii
-cp ascii /usr/bin
-cp ascii.1 /usr/man/man1/ascii.1
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
+
+install -s ascii $RPM_BUILD_ROOT%{_bindir}
+install ascii.1  $RPM_BUILD_ROOT%{_mandir}/man1/ascii.1
+
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/ascii.1
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
-/usr/man/man1/ascii.1
-/usr/bin/ascii
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/ascii
+
+%{_mandir}/man1/ascii.1.gz
