@@ -7,7 +7,7 @@ Copyright:	distributable
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekstowe
 Source:		ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The ascii utility provides easy conversion between various byte 
