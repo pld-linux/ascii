@@ -1,12 +1,12 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	3.2
+Version:	3.4
 Release:	1
 License:	distributable
 Group:		Applications/Text
 Source0:	http://www.catb.org/~esr/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	c87cec846efe6af3c5c88e7e8af24dd6
+# Source0-md5:	dedc23e942746a0c1b4299ca97b5d5dc
 URL:		http://www.catb.org/~esr/ascii/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,13 +39,13 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install ascii $RPM_BUILD_ROOT%{_bindir}
-install ascii.1  $RPM_BUILD_ROOT%{_mandir}/man1/ascii.1
+install ascii.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ascii.cgi
+%doc README
 %attr(755,root,root) %{_bindir}/ascii
 %{_mandir}/man1/*
