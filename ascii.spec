@@ -3,7 +3,7 @@ Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
 Version:	2.7
 Release:	1
-Copyright:	distributable
+License:	distributable
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
