@@ -4,9 +4,10 @@ Name:		ascii
 Version:	2.7
 Release:	1
 Copyright:	distributable
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,16 +32,14 @@ zestaw znaków ASCII.
 %setup -q
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install -s ascii $RPM_BUILD_ROOT%{_bindir}
+install ascii $RPM_BUILD_ROOT%{_bindir}
 install ascii.1  $RPM_BUILD_ROOT%{_mandir}/man1/ascii.1
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/ascii.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
