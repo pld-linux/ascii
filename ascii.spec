@@ -5,25 +5,27 @@ Version:	2.7
 Release:	1
 Copyright:	distributable
 Group:		Utilities/Text
+Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
-Source:		ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
+Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The ascii utility provides easy conversion between various byte 
-representations and the American Standard Code for Information Interchange 
-(ASCII) character table.  It knows about a wide variety of hex, binary, 
-octal, Teletype mnemonic, ISO/ECMA code point, slang name, and other 
-representations.  Given any one on the command line, it will try to display 
-all others.  Called with no arguments it displays a handy small ASCII 
-chart.   
+The ascii utility provides easy conversion between various byte
+representations and the American Standard Code for Information
+Interchange (ASCII) character table. It knows about a wide variety of
+hex, binary, octal, Teletype mnemonic, ISO/ECMA code point, slang
+name, and other representations. Given any one on the command line, it
+will try to display all others. Called with no arguments it displays a
+handy small ASCII chart.
 
 %description -l pl
-Program ascii umo¿liwia ³atw± konwersjê pomiêdzy tablic± znaków ASCII i ich 
-ró¿nymi odpowiednikami w postaci heksadecymalnej, binarnej, oktalnej,  
-Teletype mnemonic, ISO/ECMA, nazw potocznych, etc. Jakikolwiek z nich  
-podany w linii poleceñ spowoduje wy¶wietlenie pozosta³ych odpowiedników. 
-Wywo³any bez argumentów wy¶wietla porêczny zestaw znaków ASCII.   
+Program ascii umo¿liwia ³atw± konwersjê pomiêdzy tablic± znaków ASCII
+i ich ró¿nymi odpowiednikami w postaci heksadecymalnej, binarnej,
+oktalnej, Teletype mnemonic, ISO/ECMA, nazw potocznych, etc.
+Jakikolwiek z nich podany w linii poleceñ spowoduje wy¶wietlenie
+pozosta³ych odpowiedników. Wywo³any bez argumentów wy¶wietla porêczny
+zestaw znaków ASCII.
 
 %prep
 %setup -q
