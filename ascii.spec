@@ -1,12 +1,12 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	3.6
-Release:	2
+Version:	3.7
+Release:	1
 License:	distributable
 Group:		Applications/Text
-Source0:	http://www.catb.org/~esr/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	724c9743e13791585050c01be70a4cf9
+Source0:	http://www.catb.org/~esr/ascii/%{name}-%{version}.tar.gz
+# Source0-md5:	4cbcf2226ae9ca36a1671ed81f80b7de
 URL:		http://www.catb.org/~esr/ascii/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
