@@ -2,7 +2,7 @@ Summary:	Interactive ASCII name and synonym chart
 Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
 Version:	3.1
-Release:	1
+Release:	2
 License:	distributable
 Group:		Applications/Text
 Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
