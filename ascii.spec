@@ -6,6 +6,7 @@ Release:	1
 License:	distributable
 Group:		Applications/Text
 Source0:	ftp://locke.ccil.org/pub/esr/%{name}-%{version}.tar.gz
+# Source0-md5:	ea3866df5aedb61413791610dab75193
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
