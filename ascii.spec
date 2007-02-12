@@ -1,5 +1,5 @@
 Summary:	Interactive ASCII name and synonym chart
-Summary(pl.UTF-8):   Interaktywna tablica kodów i synonimów ASCII
+Summary(pl.UTF-8):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
 Version:	3.8
 Release:	1
