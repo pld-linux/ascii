@@ -1,5 +1,5 @@
 Summary:	Interactive ASCII name and synonym chart
-Summary(pl):	Interaktywna tablica kodów i synonimów ASCII
+Summary(pl.UTF-8):   Interaktywna tablica kodÃ³w i synonimÃ³w ASCII
 Name:		ascii
 Version:	3.8
 Release:	1
@@ -19,13 +19,13 @@ name, and other representations. Given any one on the command line, it
 will try to display all others. Called with no arguments it displays a
 handy small ASCII chart.
 
-%description -l pl
-Program ascii umo¿liwia ³atw± konwersjê pomiêdzy tablic± znaków ASCII
-i ich ró¿nymi odpowiednikami w postaci heksadecymalnej, binarnej,
+%description -l pl.UTF-8
+Program ascii umoÅ¼liwia Å‚atwÄ… konwersjÄ™ pomiÄ™dzy tablicÄ… znakÃ³w ASCII
+i ich rÃ³Å¼nymi odpowiednikami w postaci heksadecymalnej, binarnej,
 oktalnej, Teletype mnemonic, ISO/ECMA, nazw potocznych, etc.
-Jakikolwiek z nich podany w linii poleceñ spowoduje wy¶wietlenie
-pozosta³ych odpowiedników. Wywo³any bez argumentów wy¶wietla porêczny
-zestaw znaków ASCII.
+Jakikolwiek z nich podany w linii poleceÅ„ spowoduje wyÅ›wietlenie
+pozostaÅ‚ych odpowiednikÃ³w. WywoÅ‚any bez argumentÃ³w wyÅ›wietla porÄ™czny
+zestaw znakÃ³w ASCII.
 
 %prep
 %setup -q
