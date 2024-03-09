@@ -1,12 +1,12 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl.UTF-8):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	3.18
+Version:	3.20
 Release:	1
 License:	BSD
 Group:		Applications/Text
 Source0:	http://www.catb.org/~esr/ascii/%{name}-%{version}.tar.gz
-# Source0-md5:	e5a559a5b820ab20c630525ca5f7383b
+# Source0-md5:	6c11d2b6ad0c5758236cacbf6916e810
 URL:		http://www.catb.org/~esr/ascii/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,20 +32,21 @@ zestaw znaków ASCII.
 
 %build
 %{__make} \
-	CC="%{__cc} %{rpmcflags}"
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} %{rpmcppflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
 install ascii $RPM_BUILD_ROOT%{_bindir}
-install ascii.1 $RPM_BUILD_ROOT%{_mandir}/man1
+cp -p ascii.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README
+%doc COPYING NEWS.adoc README
 %attr(755,root,root) %{_bindir}/ascii
 %{_mandir}/man1/ascii.1*
