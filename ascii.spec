@@ -1,13 +1,14 @@
 Summary:	Interactive ASCII name and synonym chart
 Summary(pl.UTF-8):	Interaktywna tablica kodów i synonimów ASCII
 Name:		ascii
-Version:	3.30
+Version:	3.32
 Release:	1
 License:	BSD
 Group:		Applications/Text
 Source0:	http://www.catb.org/~esr/ascii/%{name}-%{version}.tar.gz
-# Source0-md5:	6268c89a81638c7a6ce9101de6046c93
+# Source0-md5:	5cef94c0335833d726a80c9748f004bb
 URL:		http://www.catb.org/~esr/ascii/
+BuildRequires:	ruby-asciidoctor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,20 +34,22 @@ zestaw znaków ASCII.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{rpmcppflags}"
+	CFLAGS="%{rpmcflags} -Wall -Wextra -Werror" \
+	CPPFLAGS="%{rpmcppflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 
-install ascii $RPM_BUILD_ROOT%{_bindir}
-cp -p ascii.1 $RPM_BUILD_ROOT%{_mandir}/man1
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX=%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING NEWS.adoc README
+%doc COPYING NEWS.adoc README.adoc
 %attr(755,root,root) %{_bindir}/ascii
 %{_mandir}/man1/ascii.1*
